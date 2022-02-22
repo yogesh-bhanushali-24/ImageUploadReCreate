@@ -29,13 +29,7 @@ namespace ImageUploadReCreate.Controllers
             return View();
         }
 
-        public GeoInfoProvider()
-        {
-            _httpClient = new HttpClient()
-            {
-                Timeout = TimeSpan.FromSeconds(5)
-            };
-        }
+       
 
 
     }

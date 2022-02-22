@@ -76,7 +76,7 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                <a asp-action="Detail" asp-route-id="@item.Id"> @Html.DisplayFor(modelItem => item.Name)</a>
             </td>
             <td>
                 <img src="~/Images/@item.ProfileImage" class="rounded-circle" width="40" height="40" asp-append-version="true"/>

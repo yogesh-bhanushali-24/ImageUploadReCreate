@@ -206,6 +206,13 @@ namespace ImageUploadReCreate.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Detail(int id)
+        {
+            var detail = Context.Students.Where(x => x.Id == id).FirstOrDefault();
+            return View(detail);
+        }
+
+
 
         public IActionResult UpdateImage()
         {

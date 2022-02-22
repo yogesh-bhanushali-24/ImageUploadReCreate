@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ImageUploadReCreate.Models.Customer>
+﻿@model IEnumerable<ImageUploadReCreate.Models.Product_Category>
 
 @{
     ViewData["Title"] = "ShowProduct";
@@ -13,19 +13,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Pname)
+                @Html.DisplayNameFor(model => model.custom.Pname)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pdetail)
+                @Html.DisplayNameFor(model => model.custom.Pdetail)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pprice)
+                @Html.DisplayNameFor(model => model.custom.Pprice)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cid)
+                @Html.DisplayNameFor(model => model.std.Cname)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProfileImage)
+                @Html.DisplayNameFor(model => model.custom.ProfileImage)
             </th>
             <th></th>
         </tr>
@@ -34,25 +34,25 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Pname)
+                @Html.DisplayFor(modelItem => item.custom.Pname)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Pdetail)
+                @Html.DisplayFor(modelItem => item.custom.Pdetail)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Pprice)
+                @Html.DisplayFor(modelItem => item.custom.Pprice)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cid)
+                @Html.DisplayFor(modelItem => item.std.Cname)
             </td>
             <td>
                 @*@Html.DisplayFor(modelItem => item.ProfileImage)*@
-                <img src="~/Images/@item.ProfileImage" class="rounded-circle" width="40" height="40" asp-append-version="true" />
+                <img src="~/Images/@item.custom.ProfileImage" class="rounded-circle" width="40" height="40" asp-append-version="true" />
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Pid">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Pid">Details</a> |
-                <a asp-action="DeleteProduct" asp-route-id="@item.Pid">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.custom.Pid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.custom.Pid">Details</a> |
+                <a asp-action="DeleteProduct" asp-route-id="@item.custom.Pid">Delete</a>
             </td>
         </tr>
 }

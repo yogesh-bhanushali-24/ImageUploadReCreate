@@ -90,8 +90,19 @@ namespace ImageUploadReCreate.Controllers
 
         public IActionResult ShowProduct()
         {
-            var viewProduct = _db.customers.ToList();
-            return View(viewProduct);
+            List<Customer> custm = _db.customers.ToList();
+            List<Stdcategory> std = _db.stdcategories.ToList();
+            var join= from e1 in std
+                      join e2 in custm on e1.Cid equals e2.Cid into tabel1
+                      from e2 in tabel1.ToList()
+                      select new Product_Category
+                      {
+                          std = e1,
+                          custom = e2
+
+                      };
+
+            return View(join);
         }
 
 

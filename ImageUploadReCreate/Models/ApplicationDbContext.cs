@@ -14,6 +14,7 @@ namespace ImageUploadReCreate.Models
         }
         public DbSet<Student> Students { get; set; }
         public DbSet<Stdcategory> stdcategories { get; set; }
+        public DbSet<Customer> customers { get; set; }
         
     }
 }

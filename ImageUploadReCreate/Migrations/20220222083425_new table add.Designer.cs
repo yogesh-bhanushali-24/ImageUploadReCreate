@@ -3,14 +3,16 @@ using ImageUploadReCreate.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ImageUploadReCreate.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220222083425_new table add")]
+    partial class newtableadd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,7 +22,7 @@ namespace ImageUploadReCreate.Migrations
 
             modelBuilder.Entity("ImageUploadReCreate.Models.Customer", b =>
                 {
-                    b.Property<int>("Pid")
+                    b.Property<int>("Custid")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -28,21 +30,11 @@ namespace ImageUploadReCreate.Migrations
                     b.Property<int>("Cid")
                         .HasColumnType("int");
 
-                    b.Property<string>("Pdetail")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Pname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Pprice")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ProfileImage")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Pid");
+                    b.HasKey("Custid");
 
                     b.ToTable("customers");
                 });

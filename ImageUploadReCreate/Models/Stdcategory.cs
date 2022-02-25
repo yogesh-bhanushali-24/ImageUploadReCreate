@@ -10,6 +10,7 @@ namespace ImageUploadReCreate.Models
     {
         [Key]
         public int Cid { get; set; }
+        [Required]
         public string Cname { get; set; }
     }
 }

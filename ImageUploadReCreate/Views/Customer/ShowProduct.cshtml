@@ -46,11 +46,11 @@
                 @Html.DisplayFor(modelItem => item.std.Cname)
             </td>
             <td>
-                @*@Html.DisplayFor(modelItem => item.ProfileImage)*@
+               
                 <img src="~/Images/@item.custom.ProfileImage" class="rounded-circle" width="40" height="40" asp-append-version="true" />
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.custom.Pid">Edit</a> |
+                <a asp-action="EditProduct" asp-route-id="@item.custom.Pid">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.custom.Pid">Details</a> |
                 <a asp-action="DeleteProduct" asp-route-id="@item.custom.Pid">Delete</a>
             </td>

@@ -15,8 +15,10 @@ namespace ImageUploadReCreate.Models
         [Required]
         public string Pdetail { get; set; }
         [Required]
-        public int Pprice { get; set; }
-        public int Cid { get; set; }
+        public int? Pprice { get; set; }
+        [Required]
+        public int? Cid { get; set; }
+        [Required]
         public string ProfileImage { get; set; }
     }
 }
